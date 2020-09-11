@@ -1,0 +1,271 @@
+{
+    "sc_pos": {
+        "instr": "mec",
+        "low_res": "srvy",
+        "high_res": "brst",
+        "prod_string": "",
+        "descriptor": "Spacecraft position",
+        "cdf_key": {
+            "sc_pos": "mms${probe}_mec_r_${coords}"
+        },
+        "prod": {
+            "sc_pos": "mms${probe}_mec_r_${coords}"
+        }
+    },
+    "sc_att": {
+        "instr": "mec",
+        "low_res": "srvy",
+        "high_res": "srvy",
+        "prod_string": "",
+        "descriptor": "Spacecraft attitude",
+        "cdf_key": {
+            "sc_att": "mms${probe}_mec_quat_eci_to_${frame}"
+        },
+        "prod": {
+            "sc_att": "mms${probe}_mec_quat_eci_to_${frame}"
+        }
+    },
+    "dc_mag": {
+        "instr": "fgm",
+        "low_res": "srvy",
+        "high_res": "brst",
+        "prod_string": "",
+        "descriptor": "3-component (x, y, z) or 4-component (x, y, z, tot) vector of magnetic field",
+        "cdf_key": {
+            "B0_vec": "mms${probe}_fgm_b_${coords}_${mode}_l2"
+        },
+        "prod": {
+            "dc_mag": "mms${probe}_fgm_b_${coords}_${mode}_l2"
+        }
+    },
+    "dc_elec": {
+        "instr": "edp",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dce",
+        "descriptor": "Direct-current electric field",
+        "cdf_key": {
+            "E_vec": "mms${probe}_edp_dce_${coords}_${mode}_l2"
+        },
+        "prod": {
+            "dc_elec": "mms${probe}_edp_dce_${coords}_${mode}_l2"
+        }
+    },
+    "i_dens": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion number density",
+        "cdf_key": {
+            "FPI_number_density": "mms${probe}_dis_numberdensity_${mode}"
+        },
+        "prod": {
+            "i_dens": "mms${probe}_dis_numberdensity_${mode}"
+        }
+    },
+    "e_dens": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "des-moms",
+        "descriptor": "Electron number density",
+        "cdf_key": {
+            "FPI_number_density": "mms${probe}_des_numberdensity_${mode}"
+        },
+        "prod": {
+            "i_dens": "mms${probe}_des_numberdensity_${mode}"
+        }
+    },
+    "e_bulkv": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "des-moms",
+        "descriptor": "Electron bulk velocity vector",
+        "cdf_key": {
+            "FPI_bulk_velocity": "mms${probe}_des_bulkv_${coords}_${mode}"
+        },
+        "prod": {
+            "e_bulkv": "mms${probe}_des_bulkv_${coords}_${mode}"
+        }
+    },
+    "i_bulkv": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion bulk velocity vector",
+        "cdf_key": {
+            "FPI_bulk_velocity": "mms${probe}_dis_bulkv_${coords}_${mode}"
+        },
+        "prod": {
+            "i_bulkv": "mms${probe}_dis_bulkv_${coords}_${mode}"
+        }
+    },
+    "i_dist": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-dist",
+        "descriptor": "Ion 3D distribution function",
+        "cdf_key": {
+            "dist": "mms${probe}_dis_dist_${mode}",
+            "energy": "mms${probe}_dis_energy_${mode}"
+        },
+        "prod": {
+            "dist": "mms${probe}_dis_dist_${mode}",
+            "energy": "mms${probe}_dis_energy_${mode}",
+            "theta": "mms${probe}_dis_theta_${mode}",
+            "phi": "mms${probe}_dis_phi_${mode}"
+        }
+    },
+    "e_dist": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "des-dist",
+        "descriptor": "Electron 3D distribution function",
+        "cdf_key": {
+            "dist": "mms${probe}_des_dist_${mode}",
+            "energy": "mms${probe}_des_energy_${mode}"
+        },
+        "prod": {
+            "dist": "mms${probe}_des_dist_${mode}",
+            "energy": "mms${probe}_des_energy_${mode}",
+            "theta": "mms${probe}_des_theta_${mode}",
+            "phi": "mms${probe}_des_phi_${mode}"
+        }
+    },
+    "e_temppara": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "des-moms",
+        "descriptor": "Electron temperature parallel to dc_mag",
+        "cdf_key": {
+            "FPI_number_density": "mms${probe}_des_temppara_${mode}"
+        },
+        "prod": {
+            "e_dens": "mms${probe}_des_temppara_${mode}"
+        }
+    },
+    "e_tempperp": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "des-moms",
+        "descriptor": "Electron temperature perpendicular to dc_mag",
+        "cdf_key": {
+            "FPI_number_density": "mms${probe}_des_tempperp_${mode}"
+        },
+        "prod": {
+            "e_dens": "mms${probe}_des_tempperp_${mode}"
+        }
+    },
+    "i_temppara": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion temperature parallel to dc_mag",
+        "cdf_key": {
+            "FPI_number_density": "mms${probe}_dis_temppara_${mode}"
+        },
+        "prod": {
+            "i_dens": "mms${probe}_dis_temppara_${mode}"
+        }
+    },
+    "i_tempperp": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion temperature perpendicular to dc_mag",
+        "cdf_key": {
+            "FPI_number_density": "mms${probe}_dis_tempperp_${mode}"
+        },
+        "prod": {
+            "i_dens": "mms${probe}_dis_tempperp_${mode}"
+        }
+    },
+    "i_omniflux": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion omnidirectional energy spectrum",
+        "cdf_key": {
+            "FPI_omni_flux": "mms${probe}_dis_energyspectr_omni_${mode}"
+        },
+        "prod": {
+            "i_omniflux": "mms${probe}_dis_energyspectr_omni_${mode}"
+        }
+    },
+    "i_energy": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion energy channels table",
+        "cdf_key": {
+            "FPI_energy_table": "mms${probe}_dis_energy_${mode}"
+        },
+        "prod": {
+            "i_energy": "mms${probe}_dis_energy_${mode}"
+
+        }
+    },
+    "i_aspoc": {
+        "instr": "aspoc",
+        "low_res": "srvy",
+        "high_res": "srvy",
+        "prod_string": "",
+        "descriptor": "Spacecraft potential control ion current",
+        "cdf_key": {
+            "ASPOC_ion_current": "mms${probe}_aspoc_ionc"
+        },
+        "prod": {
+            "i_aspoc": "mms${probe}_aspoc_ionc"
+        }
+    },
+    "i_prestens": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion pressure tensor",
+        "cdf_key": {
+            "FPI_Ion_pressure_tensor": "mms${probe}_dis_prestensor_${coords}_${mode}"
+        },
+        "prod": {
+            "i_prestens": "mms${probe}_dis_prestensor_${coords}_${mode}"
+        }
+    },
+    "i_temptens": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion temperature tensor",
+        "cdf_key": {
+            "FPI_ion_temperature_tensor": "mms${probe}_dis_temptensor_${coords}_${mode}"
+        },
+        "prod": {
+            "i_temptens": "mms${probe}_dis_temptensor_${coords}_${mode}"
+        }
+    },
+    "i_heatq": {
+        "instr": "fpi",
+        "low_res": "fast",
+        "high_res": "brst",
+        "prod_string": "dis-moms",
+        "descriptor": "Ion heat flux",
+        "cdf_key": {
+            "FPI_ion_heat_flux": "mms${probe}_dis_heatq_${coords}_${mode}"
+        },
+        "prod": {
+            "i_heatq": "mms${probe}_dis_heatq_${coords}_${mode}"
+        }
+    }
+}

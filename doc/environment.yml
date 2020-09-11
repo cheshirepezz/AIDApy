@@ -1,0 +1,14 @@
+name: aidpy_ci
+channels:
+- conda-forge
+- defaults
+dependencies:
+- heliopy>=0.12
+- xarray
+- sphinxcontrib-apidoc
+- sphinx
+- ipython
+- ipykernel
+- sphinx
+- sphinx_rtd_theme
+- nbsphinx

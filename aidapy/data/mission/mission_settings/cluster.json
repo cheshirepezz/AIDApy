@@ -1,0 +1,85 @@
+{
+    "dc_mag": {
+                "instr": "fgm",
+                "low_res": "SPIN",
+                "high_res": "FULL",
+                "prod_string": "CP_FGM_${mode}",
+                "descriptor": "3-component (x, y, z) or 4-component (x, y, z, tot) vector of magnetic field",
+                "cdf_key": {
+                    "B0_vector": "B_vec_xyz_${coords}__C${probe}_CP_FGM_${mode}"
+                }
+            },
+    "sc_pos": {
+                "instr": "fgm",
+                "low_res": "SPIN",
+                "high_res": "FULL",
+                "prod_string": "CP_FGM_${mode}",
+                "descriptor": "Spacecraft position",
+                "cdf_key": {
+                    "pos_gse": "sc_pos_xyz_gse__C${probe}_CP_FGM_${mode}"
+                }
+            },
+    "i_dens": {
+                "instr": "cis",
+                "low_res": "only",
+                "high_res": "none",
+                "prod_string": "CP_CIS-HIA_ONBOARD_MOMENTS",
+                "descriptor": "Ion number density",
+                "cdf_key": {
+                    "HIA_number_density": "density__C${probe}_CP_CIS-HIA_ONBOARD_MOMENTS"
+                }
+            },
+    "i_bulkv": {
+                "instr": "cis",
+                "low_res": "only",
+                "high_res": "none",
+                "prod_string": "CP_CIS-HIA_ONBOARD_MOMENTS",
+                "descriptor": "Ion bulk velocity vector",
+                "cdf_key": {
+                    "HIA_ion velocity_density": "velocity_${coords}__C${probe}_CP_CIS-HIA_ONBOARD_MOMENTS"
+                }
+            },
+    "i_dist": {
+                "instr": "cis",
+                "low_res": "only",
+                "high_res": "none",
+                "prod_string": "CP_CIS-HIA_HS_MAG_IONS_PF",
+                "descriptor": "Ion 3D distribution function",
+                "cdf_key": {
+                    "dist": "3d_ions__C${probe}_CP_CIS-HIA_HS_MAG_IONS_PF",
+                    "theta": "theta__C${probe}_CP_CIS-HIA_HS_MAG_IONS_PF",
+                    "phi": "phi__C${probe}_CP_CIS-HIA_HS_MAG_IONS_PF",
+                    "energy": "energy_table__C${probe}_CP_CIS-HIA_HS_MAG_IONS_PF"
+                }
+             },
+    "i_temppara": {
+                "instr": "cis",
+                "low_res": "only",
+                "high_res": "none",
+                "prod_string": "CP_CIS-HIA_ONBOARD_MOMENTS",
+                "descriptor": "Ion temperature parallel to dc_mag",
+                "cdf_key": {
+                    "HIA_number_density": "temp_par__C${probe}_CP_CIS-HIA_ONBOARD_MOMENTS"
+                }
+            },
+    "i_tempperp": {
+                "instr": "cis",
+                "low_res": "only",
+                "high_res": "none",
+                "prod_string": "CP_CIS-HIA_ONBOARD_MOMENTS",
+                "descriptor": "Ion temperature perpendicular to dc_mag",
+                "cdf_key": {
+                    "HIA_number_density": "temp_perp__C${probe}_CP_CIS-HIA_ONBOARD_MOMENTS"
+                }
+            },
+    "i_temp": {
+                "instr": "cis",
+                "low_res": "only",
+                "high_res": "none",
+                "prod_string": "CP_CIS-HIA_ONBOARD_MOMENTS",
+                "descriptor": "Ion temperature",
+                "cdf_key": {
+                    "HIA_number_density": "temperature__C${probe}_CP_CIS-HIA_ONBOARD_MOMENTS"
+                }
+            }
+}

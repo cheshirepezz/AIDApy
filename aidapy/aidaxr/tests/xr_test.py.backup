@@ -1,0 +1,84 @@
+import xarray as xr
+import numpy as np
+import pandas as pd
+from aidapy.aidaxr import statistics
+
+data = np.random.rand(10, 3)
+data2 = np.random.rand(12, 3)
+locs = ['IA', 'IL', 'IN']
+time = pd.date_range('2000-01-01', periods=10)
+time2 = pd.date_range('2000-01-01', periods=12)
+foo = xr.DataArray(data, coords=[time, locs], dims=['time', 'space'], attrs={'units':'meters'})
+foo2 = xr.DataArray(data2, coords=[time2, locs], dims=['time2', 'space'], attrs={'units':'meters'})
+
+ds = xr.Dataset({'foo1': foo, 'foo2':foo2})
+
+print(foo)
+print(type(foo.coords))
+for coord in foo.coords.values():
+    print('toto', coord)
+print('---- Structure function ----')
+y = foo.statistics.sfunc(scale=[2,4], order=3)
+print(y)
+print(y.attrs)
+
+
+
+
+print('---- Sliding window mean ----')
+# time is the axis/coordinate on which to perform the statistics
+y = foo.statistics.mean(time=3, center=True)
+print(y)
+
+print('---- Sliding window standard deviation ----')
+y = foo.statistics.std(time=3, center=True)
+print(y)
+
+print('')
+print('---- Power Spectral Density FFT ----')
+y = foo.statistics.psd(scaling='density')
+print(y)
+
+print(set(ds.dims))
+print('---- Structure function ----')
+ds_y = ds.statistics.sfunc(scale=[2,4], order=3)
+print(ds_y)
+
+print('---- Structure function ----')
+ds_y = ds.statistics.sfunc(var='foo2', scale=[2,4], order=3)
+print(ds_y)
+
+print('---- Autocorrelation function ----')
+row = 10
+col = 3
+time = pd.date_range('2000-01-01', periods=10)
+locs = ['Bx', 'By', 'Bz']
+data = np.random.rand(row, col)
+foo = xr.DataArray(data, coords=[time, locs], dims=['time', 'space'], attrs={'units': 'nT'})
+
+y = foo.statistics.autocorr(timeu='h')
+print(y)
+
+print('---- Autocorrelation function SIN test ----')
+x = np.arange(0,6*np.pi,np.pi/4)
+data = np.array([np.sin(x), np.cos(x)]).T
+time = pd.date_range('2000-01-01', periods=len(data))
+locs = ['Np', 'Bz']
+foo = xr.DataArray(data, coords=[time, locs], dims=['time', 'space'], attrs={'units': 'cm^-3'})
+y = foo.statistics.autocorr(lagbeg=2, stride=2, timeu='D')
+print(foo)
+print(y)
+
+print('---- Power Spectral Density Wavelets ----')
+x = np.arange(512)
+data = np.array([np.sin(2*np.pi*x/32)]).T
+time = pd.date_range('2000-01-01', periods=len(data))
+locs = ['Np']
+foo = xr.DataArray(data, coords=[time, locs], dims=['time', 'space'], attrs={'units': 'cm^-3'})
+print(foo)
+wave, freqs, sp=foo.statistics.psdwt(1, np.arange(1,129), 'gaus1')
+print(wave)
+print(freqs)
+print(sp)
+print(wave.shape, freqs.shape, sp.shape)
+

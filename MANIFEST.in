@@ -1,0 +1,21 @@
+include README.rst
+recursive-include aidapy/data/mission/mission_settings *.json
+
+
+# added by check_manifest.py
+include *.rst
+include *.txt
+include *.yml
+recursive-include aidapy *.backup
+recursive-include aidapy *.py
+recursive-include aidapy *.txt
+recursive-include doc *.css
+recursive-include doc *.eps
+recursive-include doc *.png
+recursive-include doc *.py
+recursive-include doc *.rst
+recursive-include doc *.txt
+recursive-include doc Makefile
+recursive-include examples *.ipynb
+recursive-include examples *.py
+recursive-include examples *.rst
